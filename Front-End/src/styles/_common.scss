@@ -1,0 +1,843 @@
+/* ----------------------------------------*/
+/* Reset                                   */
+/* ----------------------------------------*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ----------------------------------------*/
+/* Common styles                           */
+/* ----------------------------------------*/
+
+body {
+  background-color: $background;
+  color: $black-ME;
+}
+
+/* Scroll bar styling - start */
+// body,
+// div,
+// textarea {
+//   /* width */
+//   &::-webkit-scrollbar {
+//     width: 10px;
+//     transform: translateY(20px);
+//   }
+
+//   /* Track */
+//   &::-webkit-scrollbar-track {
+//     background: $gray-200;
+//     transform: translateY(20px);
+//   }
+
+//   /* Handle */
+//   &::-webkit-scrollbar-thumb {
+//     border-radius: 10px;
+//     border: 3px solid $gray-200;
+//     background: $gray-500;
+//     transform: translateY(20px);
+//   }
+
+//   /* Handle on hover */
+//   &::-webkit-scrollbar-thumb:hover {
+//     background: $gray-600;
+//     transform: translateY(20px);
+//   }
+// }
+/* Scroll bar styling - end */
+
+/* Typography- start*/
+body,
+p {
+  @include typeface(0.85rem, normal);
+}
+
+h1 {
+  @include typeface(2rem, 600);
+}
+
+h2 {
+  @include typeface(1.25rem, 600);
+}
+
+h3 {
+  @include typeface(1rem, 600);
+}
+
+h4 {
+  @include typeface(0.85rem, 500);
+}
+
+h5 {
+  @include typeface(0.75rem, 600);
+}
+
+h6 {
+  @include typeface(0.75rem, 500);
+}
+
+button,
+.button {
+  @include typeface(0.85rem, 300);
+  text-transform: capitalize;
+}
+
+.caption {
+  @include typeface(0.6875rem, 400);
+  font-style: italic;
+  color: $black-disabled;
+  line-height: 0.75rem;
+}
+
+.overline {
+  @include typeface(0.6875rem, normal);
+}
+
+.title {
+  @include typeface(0.75rem, 700);
+  color: $black-HE;
+}
+
+.sub-title {
+  @include typeface(1rem, 400);
+  color: $black-disabled;
+}
+.label {
+  @include typeface(1.25rem, 400);
+  color: $black-HE;
+}
+
+.body-small {
+  @include typeface(0.75rem, 400);
+}
+
+.red-text {
+  color: $red;
+}
+
+.primary-text {
+  color: $primary-300;
+}
+
+.green-text {
+  color: $green;
+}
+
+.hyper-link {
+  color: $primary-300;
+}
+
+.required-symbol {
+  color: $primary-300;
+}
+.bold-text {
+  font-weight: 600 !important;
+}
+
+/* Typography - end*/
+
+/* Layout - start*/
+.flex {
+  display: flex;
+  gap: $gap;
+}
+.flex-start {
+  display: flex;
+  align-items: flex-start;
+}
+
+.flex-end {
+  display: flex;
+  align-items: flex-end;
+}
+.flex--start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.flex--end {
+  display: flex;
+  justify-content: flex-end;
+}
+.flex--between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex--center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+.flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-center-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex-center-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.flex-start-between {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.flex-end-between {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.flex-center-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-center-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.flex-start-center {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.flex-end-center {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.flex-end-start {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.flex-end-end {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.flex-v {
+  flex-direction: column;
+}
+.flex-vr {
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+  gap: $gap;
+}
+
+.gap-0 {
+  gap: 0px;
+}
+.gap-2 {
+  gap: 3px;
+}
+.gap-3 {
+  gap: 3px;
+}
+.gap-4 {
+  gap: 4px;
+}
+.gap-6 {
+  gap: 6px;
+}
+.gap-8 {
+  gap: 8px;
+}
+.gap-12 {
+  gap: 12px;
+}
+.gap-14 {
+  gap: 14px;
+}
+.gap-16 {
+  gap: 16px;
+}
+.gap-18 {
+  gap: 18px;
+}
+.gap-20 {
+  gap: 20px;
+}
+.gap-24 {
+  gap: 24px;
+}
+.gap-28 {
+  gap: 28px;
+}
+.gap-32 {
+  gap: 32px;
+}
+.gap-36 {
+  gap: 36px;
+}
+.gap-40 {
+  gap: 40px;
+}
+.gap-48 {
+  gap: 48px;
+}
+.gap-56 {
+  gap: 56px;
+}
+
+.flex-0 {
+  flex: 0;
+}
+.flex-1 {
+  flex: 1;
+}
+.flex-2 {
+  flex: 2;
+}
+.flex-3 {
+  flex: 3;
+}
+.flex-3 {
+  flex: 3;
+}
+.flex-4 {
+  flex: 4;
+}
+.flex-6 {
+  flex: 6;
+}
+.flex-5 {
+  flex: 5;
+}
+.flex-7 {
+  flex: 7;
+}
+.flex-8 {
+  flex: 8;
+}
+.flex-12 {
+  flex: 12;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+/* Layout - end*/
+
+/* Wrapping containers styling - start*/
+.common-container {
+  padding: 32px 32px 64px 32px;
+  margin-inline: auto;
+  max-width: 1280px;
+  overflow: visible;
+  min-height: calc(100% - 70px);
+  
+}
+
+.common-surface {
+  padding: 24px;
+  background: $white;
+  border: 1px solid $gray-300;
+}
+/* Wrapping containers styling - end*/
+
+/* Hide elements screen only - start*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+/* Hide elements screen only - end*/
+
+/* Form controls styling - start */
+.text-link {
+  text-decoration: underline;
+  color: $primary-300;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  font-family: $default-font;
+  width: 260px;
+  padding: 10px 12px;
+  outline: 1px solid $gray-300 !important;
+  border: 0 !important;
+  border-radius: 3px;
+  background-color: $gray-200;
+  height: 40px;
+  transition: 0.2s;
+  color: $black;
+  font-size: 12px;
+  font-weight: 400;
+  box-sizing: border-box;
+  &:hover {
+    outline: 1px solid $primary-300 !important;
+  }
+  &:focus,
+  &:focus-visible {
+    color: $black-HE;
+    outline: 1px solid $primary-300 !important;
+    box-shadow: 0px 0px 0px 3px $primary-100;
+  }
+
+  &::placeholder {
+    color: $black-disabled;
+    font-style: italic;
+    font-weight: 400;
+  }
+  &:disabled {
+    background-image: $gray-200 !important;
+    color: $gray-500;
+    cursor: not-allowed;
+    &:hover {
+      outline: 0 !important;
+    }
+    &:focus,
+    &:focus-visible {
+      outline: 0 !important;
+    }
+  }
+}
+
+input[type="textarea"],
+textarea {
+  font-family: $default-font;
+  width: 260px;
+  padding: 10px 12px;
+  outline: 1px solid $gray-300 !important;
+  border: 0;
+  border-radius: 3px;
+  background-color: $gray-200;
+  transition: 0.2s;
+  color: $black;
+  font-size: 12px;
+  font-weight: 400;
+  min-height: 40px;
+  box-sizing: border-box;
+  &:hover {
+    outline: 1px solid $primary-300 !important;
+  }
+  &:focus,
+  &:focus-visible {
+    outline: 1px solid $primary-300 !important;
+    color: $black-HE;
+    box-shadow: 0px 0px 0px 3px $primary-100;
+  }
+  &::placeholder {
+    color: $black-disabled;
+    font-style: italic;
+    font-weight: 400;
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("~@/assets/Icons/icon-navigation-expand_more.svg");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  color: $black;
+  cursor: pointer;
+  &:invalid {
+    color: $black-disabled;
+  }
+}
+
+option {
+  color: $black-ME;
+}
+
+button,
+.button {
+  border: 0;
+  min-height: 36px;
+  padding: 0 28px;
+  min-width: 60px;
+  border-radius: 30px;
+  color: $white;
+  cursor: pointer;
+  transition: 0.2s;
+  text-decoration: unset;
+  background-color: $gray-800;
+
+  &:hover {
+    filter: brightness(110%);
+  }
+
+  &.btn-main {
+    background-color: $primary-300;
+  }
+  &.btn-sub {
+    color: $primary-300;
+    background-color: $white;
+    border: 1px solid $primary-100;
+    &:hover {
+      filter: brightness(98%);
+    }
+  }
+
+  &.btn-green {
+    background-color: $green;
+  }
+
+  &.btn-pink {
+    background-color: $pink;
+    padding: 0 24px 0 18px !important;
+    gap: 6px !important;
+  }
+
+  &.btn-gray {
+    background-color: $gray-600;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  &.btn-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 28px 0 22px;
+  }
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid $gray-300;
+  width: 100%;
+  margin: 0;
+}
+.hr-low {
+  border-top: 1px solid $gray-200;
+}
+
+.highlight-text {
+  display: inline-block;
+  min-width: 16px;
+  font-weight: bold;
+  background: $gray-200;
+  color: $black-HE;
+  text-align: center;
+  border-radius: 2px;
+}
+/* Form controls styling - end */
+
+/*  Toggle Switch - start */
+.toggleSwitch span span {
+  display: none;
+}
+
+@media only screen {
+  .toggleSwitch {
+    display: inline-block;
+    height: 18px;
+    position: relative;
+    overflow: visible;
+    padding: 0;
+    margin-left: 50px;
+    cursor: pointer;
+    width: 40px;
+  }
+  .toggleSwitch * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .toggleSwitch label,
+  .toggleSwitch > span {
+    line-height: 20px;
+    height: 20px;
+    vertical-align: middle;
+  }
+  .toggleSwitch input:focus ~ a,
+  .toggleSwitch input:focus + label {
+    outline: none;
+  }
+  .toggleSwitch label {
+    position: relative;
+    z-index: 3;
+    display: block;
+    width: 100%;
+  }
+  .toggleSwitch input {
+    position: absolute;
+    opacity: 0;
+    z-index: 5;
+  }
+  .toggleSwitch > span {
+    position: absolute;
+    left: -50px;
+    width: 100%;
+    margin: 0;
+    padding-right: 50px;
+    text-align: left;
+    white-space: nowrap;
+    padding: 1px;
+  }
+  .toggleSwitch > span span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: block;
+    width: 50%;
+    margin-left: 50px;
+    text-align: left;
+    font-size: 0.9em;
+    width: 100%;
+    left: 15%;
+    top: 0;
+    opacity: 0;
+    padding: 1;
+  }
+  .toggleSwitch a {
+    position: absolute;
+    right: 50%;
+    z-index: 4;
+    display: block;
+    top: 2px;
+    height: calc(100% - 4px);
+    padding: 2px;
+    left: 2px;
+    width: 18px;
+    background-color: $white;
+    border: 1px solid $gray-500;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    box-shadow: 0 1px 4px $gray-200;
+  }
+  .toggleSwitch > span span:first-of-type {
+    color: $black-disabled;
+    opacity: 1;
+    left: 45%;
+  }
+  .toggleSwitch > span:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50px;
+    top: 0;
+    background-color: $gray-200;
+    border: 2px solid $gray-400;
+    border-radius: 30px;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  .toggleSwitch input:checked ~ a {
+    border-color: $white;
+    left: 100%;
+    margin-left: -8px;
+  }
+  .toggleSwitch input:checked ~ span:before {
+    border-color: $primary-300;
+    box-shadow: inset 0 0 0 30px $primary-100;
+  }
+  .toggleSwitch input:checked ~ span span:first-of-type {
+    opacity: 0;
+  }
+  .toggleSwitch input:checked ~ span span:last-of-type {
+    opacity: 1;
+    color: $primary-300;
+  }
+  /* Switch Sizes */
+  .toggleSwitch.md {
+    width: 56px;
+    height: 26px;
+  }
+  .toggleSwitch.md a {
+    width: 22px;
+  }
+  .toggleSwitch.md > span {
+    height: 26px;
+    line-height: 26px;
+  }
+
+  .toggleSwitch > span span {
+    margin-left: 49px;
+  }
+
+  .toggleSwitch.md input:checked ~ a {
+    box-shadow: 0 0 0 1.8px $primary-300;
+    left: 40px;
+  }
+  .toggleSwitch.md > span span {
+    font-size: 12px;
+  }
+  .toggleSwitch.md > span span:first-of-type {
+    left: 50%;
+  }
+}
+/*  Toggle Switch - end  */
+
+/* custom checkbox - start */
+.custom-checkbox {
+  position: absolute; // take it out of document flow
+  opacity: 0; // hide it
+  transition: 0.2s;
+
+  & + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    transition: 0.2s;
+  }
+
+  // Box.
+  & + label:before {
+    content: "";
+    margin-right: 6px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 18px;
+    height: 18px;
+    background: $white;
+    border: 1px solid $gray-500;
+    border-radius: 3px;
+    transition: 0.2s;
+  }
+
+  // Box hover
+  &:hover + label:before {
+    border: 1px solid $primary-300;
+  }
+
+  // Box focus
+  &:focus + label:before {
+    box-shadow: 0 0 0 2px $primary-100;
+  }
+
+  // Box checked
+  &:checked + label:before {
+    background: $primary-300;
+  }
+
+  // Disabled state label.
+  &:disabled + label {
+    color: $black-disabled;
+    cursor: auto;
+  }
+
+  // Disabled box.
+  &:disabled + label:before {
+    box-shadow: none;
+    background: $gray-300;
+    pointer-events: none;
+  }
+
+  // Checkmark. Could be replaced with an image
+  &:checked + label:after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 8px;
+    background: $white;
+    width: 2px;
+    height: 2px;
+    box-shadow: 1.5px 0 0 $white, 3.5px 0 0 $white, 3.5px -1.5px 0 $white,
+      3.5px -3.5px 0 $white, 3.5px -5.5px 0 $white, 3.5px -7.5px 0 $white;
+    transform: rotate(45deg);
+  }
+}
+/* custom checkbox - end */

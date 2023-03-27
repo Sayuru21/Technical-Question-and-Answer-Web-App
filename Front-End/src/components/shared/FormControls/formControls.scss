@@ -1,0 +1,70 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  .label-container {
+    display: flex;
+    justify-content: space-between;
+    .required-symbol {
+      color: $red;
+    }
+  }
+
+  .caption {
+    margin-top: -2px;
+  }
+
+  .invalid {
+    background-color: #{$red}05;
+    color: $red !important;
+    outline-color: $red !important;
+    &:hover {
+      background-color: #{$red}05;
+      color: $red !important;
+      outline-color: $red !important;
+    }
+    &:focus,
+    &:focus-visible {
+      color: $red;
+      outline: 1px solid $red !important;
+      box-shadow: 0px 0px 0px 2px $red-50;
+    }
+  }
+
+  .error-msg {
+    color: $red !important;
+    font-size: 10px;
+    margin-top: -7px;
+    margin-left: 4px;
+    height: 0;
+    line-height: 12px;
+  }
+
+  .error-msg-height {
+    .error-msg {
+      height: 20px;
+    }
+  }
+}
+
+.setting-control-container {
+  // padding: 18px 24px;
+  position: relative;
+  &:hover {
+    .input-wrapper,
+    input[type="number"],
+    .wix-textfield,
+    .multiselect__tags {
+      background: $primary-25;
+    }
+    .info-icon-wrapper .icon {
+      background: $gray-600;
+    }
+  }
+}
+
+.setting-label {
+  font-weight: 300;
+  color: $black-ME;
+  text-align: left;
+}
